@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi suất tiền gửi theo tháng</title>
+
+</head>
+<body>
+<h1>Chương trình tính lãi suất ngân hàng</h1>
+<br>
+<input type="text" id="sotien"> Số tiền mà bạn gửi ngân hàng .
+<br>
+<br>
+<input type="text" id="laisuat"> Lãi suất theo tháng (%).
+<br>
+<br>
+<input type="text" id="kyhan"> Kỳ hạn .
+<br>
+<br>
+<button onclick="profit()">Tính số tiền nhận được</button>
+<br>
+<br>
+<input type="text" id="result"> Kết quả
+<script>
+    function profit() {
+        let a=Number(document.getElementById('sotien').value);
+        let b=Number(document.getElementById('laisuat').value);
+        let c=Number(document.getElementById('kyhan').value);
+
+
+        let i=(b*0.01);
+
+        let sotien;
+
+        if (c === 0) {
+            document.getElementById('result').value ='nhập lại kỳ hạn'
+        } else {
+            sotien = (a * (Math.pow(1 + i, c)));
+            document.getElementById('result').value = sotien.toLocaleString(3);
+        }
+
+
+    }
+</script>
+</body>
+</html>

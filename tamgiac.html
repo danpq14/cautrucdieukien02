@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tam giác</title>
+</head>
+<body>
+<h1>Kiểm tra 3 số xem có phải là chiều dài các cạnh của tam giác hay ko</h1>
+<input type="text" id="numbera">Mời nhập vào số a.
+<br><br>
+<input type="text" id="numberb">Mời nhập vào số b.
+<br><br>
+<input type="text" id="numberc">Mời nhập vào số c.
+<br><br>
+<button onclick="check()">Kiểm tra</button> <button onclick="reset()">Reset</button>
+<br><br>
+<p id="result"></p>
+<script>
+    function check() {
+        let a=parseFloat(document.getElementById('numbera').value);
+        let b=parseFloat(document.getElementById('numberb').value);
+        let c=parseFloat(document.getElementById('numberc').value);
+        if (a>0 && b>0 && c>0) {
+            if (((a + b)> c) && ((a + c) > b) && ((b + c) > a)) {
+                document.getElementById('result').innerHTML = '3 số bạn vừa nhập là cạnh của một tam giác';
+            } else {
+                document.getElementById('result').innerHTML = '3 số bạn vừa nhập ko phải là 3 cạnh của một tam giác';
+            }
+        } else  {
+            alert('mời nhập lại 3 số a,b,c . Cả 3 số đều phải > 0') ;
+        }
+
+    }
+    function reset() {
+        document.getElementById('numbera').value = null ;
+        document.getElementById('numberb').value = null ;
+        document.getElementById('numberc').value = null ;
+        document.getElementById('result').value = null ;
+
+
+    }
+</script>
+
+
+
+</body>
+</html>

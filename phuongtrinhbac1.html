@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>phương trình bậc 1</title>
+</head>
+<body>
+<h1>Phương trình bậc 1 là phương trình có dạng như sau</h1>
+<h2>ax + b = 0</h2>
+<br>
+
+<input type="text" id="numbera">Mời nhập vào số a.
+<br>
+<br>
+<input type="text" id="numberb">Mời nhập vào số b.
+<br>
+<br>
+<button onclick="nghiem()">Tìm x</button>
+<br>
+<br>
+<p id="result">Kết quả : x = </p>
+<script>
+    function nghiem() {
+        let numbera =document.getElementById('numbera').value;
+        let numberb =document.getElementById('numberb').value;
+        let a = parseFloat(numbera);
+        let b = parseFloat(numberb);
+        let x =((b*-1)/a);
+        document.getElementById('result').innerHTML += x;
+
+    }
+</script>
+
+</body>
+</html>

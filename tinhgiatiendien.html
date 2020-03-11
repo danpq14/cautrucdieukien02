@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá tiền điện</title>
+
+</head>
+<body>
+<h1>Chương trình tính giá tiền điện</h1>
+<br>
+<br>
+<input type="text" id="number">Nhập số lượng điện (kwH) mà bạn sử dung .
+<br>
+<br>
+<pre style="font-family: 'Times New Roman'">
+    Đơn giá tiền điện :
+    từ 1 --> 50kwh : 1,678 VNĐ/kwh
+    từ 50 --> 100kwh : 1,734 VNĐ/kwh
+    từ 101 --> 200kwh : 2,014 VNĐ/kwh
+    từ 201 --> 300kwh : 2,536 VNĐ/kwh
+    từ 301 --> 400kwh : 2,834 VNĐ/kwh
+    từ 401kwh --> : 2,927 VNĐ/kwh
+</pre>
+<button onclick="tiendien()">Tính số tiền phải trả</button>
+<br>
+<br>
+<p id="result">Số tiền phải thanh toán là : </p>
+<script>
+    function tiendien() {
+        let a=parseFloat(document.getElementById('number').value)
+        let b;
+        let c;
+        let sotien;
+        if (a<=50) {
+            sotien= a*1678;
+            document.getElementById('result').innerHTML += sotien.toLocaleString(3) + ' VNĐ';
+
+
+        } else
+
+
+            if (50<a && a<=100) {
+                sotien= ((50*1678)+((a-50)*1734));
+                document.getElementById('result').innerHTML += sotien.toLocaleString(3) + ' VNĐ';
+
+            } else
+                if (100<a && a<=200) {
+                    sotien=((50*1678)+(50*1734)+((a-100)*2014));
+                    document.getElementById('result').innerHTML += sotien.toLocaleString(3) + ' VNĐ';
+                } else {
+                    if (200<a && a<=300) {
+                        sotien=((50*1678)+(50*1734)+(100*2014)+((a-200)*2536));
+                        document.getElementById('result').innerHTML += sotien.toLocaleString(3) + ' VNĐ';
+                    } else {
+                        if (300<a && a<=400) {
+                            sotien=((50*1678)+(50*1734)+(100*2014)+(100*2536)+((a-300)*2834));
+                            document.getElementById('result').innerHTML += sotien.toLocaleString(3) + ' VNĐ';
+                        } else{
+                            sotien=((50*1678)+(50*1734)+(100*2014)+(100*2536)+(100*2834)+((a-400)*2927));
+                            document.getElementById('result').innerHTML += sotien.toLocaleString(3) + ' VNĐ';
+                        }
+                    }
+                }
+
+
+    }
+</script>
+
+
+
+</body>
+</html>

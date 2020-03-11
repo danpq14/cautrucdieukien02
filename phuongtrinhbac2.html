@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phương trình bậc 2</title>
+</head>
+<body>
+<h1>Phương trình bậc 2 là phương trình có dạng như sau :</h1>
+<h2>ax<sup>2</sup> + bx + c = 0  </h2>
+<input type="text" id="numbera">Mời nhập vào số a.
+<br>
+<br>
+<input type="text" id="numberb">Mời nhập vào số b.
+<br>
+<br>
+<input type="text" id="numberc">Mời nhập vào số c.
+<br>
+<br>
+<p id="text">Phương trình bạn vừa nhập là : </p>
+<br>
+<br>
+<button onclick="phuongtrinhbac2()">Giải phương trình</button>
+<br>
+<br>
+<p id="result"></p>
+<script>
+    function phuongtrinhbac2() {
+        let a = parseFloat(document.getElementById('numbera').value);
+        let b = parseFloat(document.getElementById('numberb').value);
+        let c = parseFloat(document.getElementById('numberc').value);
+        let delta = ((b * b) - (4 * a * c));
+        let u = Math.sqrt(delta);
+        let x = ((b * -1) / (2 * a))
+        let x1 = (((b * -1) + u) / (2 * a));
+        let x2 = (((b * -1) - u) / (2 * a));
+        document.getElementById('text').innerHTML += a +'x2' + '+' +b +'x' + '+' + c + '=0' ;
+        if (a == 0) {
+            alert('mời nhập lại số a')
+        } else {
+            if (delta < 0) {
+                document.getElementById('result').innerHTML = 'Phương trình vô nghiệm';
+            } else {
+                if (delta == 0) {
+                    document.getElementById('result').innerHTML = 'Phương trình có nghiệm kép x1=x2= ' + x;
+
+                } else {
+                    document.getElementById('result').innerHTML = 'Phương trình có 2 nghiệm x1 = ' + x1 + ' và x2 = ' + x2;
+                }
+
+            }
+
+        }
+    }
+</script>
+
+
+</body>
+</html>
